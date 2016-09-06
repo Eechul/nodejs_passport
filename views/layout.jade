@@ -1,0 +1,23 @@
+doctype html
+html 
+	head
+		title Passport Example
+	body
+		unless user
+			p
+				a(href="/") Home
+				&nbsp; 
+				a(href="/login") Login
+				&nbsp; 
+		else 
+			p
+				a(href="/") Home
+				&nbsp;
+				a(href="/account") Account
+				&nbsp; 
+				a(href="/logout") 
+					img(src='/img/#{user.provider}_logout_btn.png' style="width: 120px; height: 50px;")
+				h2 json  : 
+				div=JSON.stringify(user)
+				&nbsp;
+		block content
